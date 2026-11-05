@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <locale.h>
+
+void zadanie1(void)
+{
+    puts("=== Задание 1 ===");
+    puts("");
+
+    printf("123\n");
+    puts("");
+
+    printf("1\n2\n3\n");
+    puts("");
+
+    printf("1\n\t2\n\t\t3\n");
+    puts("");
+
+    printf("%d\n%5d\n%10d\n%15d\n", 1, 2, 3, 4);
+    puts("");
+
+    printf("%10.3f\n", 12.234657);
+    puts("");
+
+    printf("%10.5f\n", 12.234657);
+    puts("");
+
+    printf("Остаток от деления %d на %d равен %d\n", 5, 2, 5 % 2);
+    puts("");
+
+    printf("7 / 5 = %d\n", 7 / 5);
+    printf("7 / 5 = %f\n", 7. / 5);
+    puts("");
+
+    printf("2000 * 4 = %d\n", 2000 * 4);
+    puts("");
+
+}
+
+void zadanie2(void)
+{
+    int N = 14, K = 30;
+    int minuts = N * 60 + K;
+    int left = 24 * 60 - minuts;
+
+    puts("=== Задание 2 ===");
+    printf("Сейчас %d часов %d минут 00 секунд\n", N, K);
+    printf("Идет %d минута суток\n", minuts);
+    printf("До полуночи осталось %d часов и %d минут\n", left / 60, left % 60);
+    printf("С 8.00 прошло %d секунд\n", (minuts - 8 * 60) * 60);
+    printf("Текущий час = %.2f суток и текущая минута = %.2f часа\n", N / 24.0, K / 60.0);
+    puts("");
+}
+
+void zadanie3(void)
+{
+    int n = 4, L = 393;
+
+    puts("=== Задание 3 === Вариант 9 ===");
+    printf("Дано:\n%10d\n%10d\n%10s\nОтвет:\n%+010.6f\n", n, L, "__________", (double)n / L);
+    puts("");
+}
+
+void homework(void)
+{
+    double distance = 390.0;
+    double rolls = 15.0;
+    double ford = 36.0;
+    double x = 3.5;
+
+    double costRolls = distance / rolls * x;
+    double costFord = distance / ford * x;
+    double saving = costRolls - costFord;
+
+    puts("=== Домашнее задание === Вариант 9 ===");
+    printf("Из Лондона в Эдинбург нужно проехать %.0f миль.\n", distance);
+    printf("Роллс-Ройс расходует 1 галлон на %.0f миль, Форд-Эскорт - 1 галлон на %.0f миль.\n", rolls, ford);
+    printf("При цене %.2f фунта за галлон поездка на Роллс-Ройсе обойдется в %.2f фунтов.\n", x, costRolls);
+    printf("На Форд-Эскорте она обойдется в %.2f фунтов, то есть человек сэкономит %.2f фунтов.\n", costFord, saving);
+    puts("");
+}
+
+int main(void)
+{
+    setlocale(LC_ALL, "rus");
+
+    zadanie1();
+    zadanie2();
+    zadanie3();
+    homework();
+
+    puts("Нажмите Enter для завершения...");
+    getchar();
+    return 0;
+}
